@@ -2,47 +2,59 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav style={styles.navbar}>
-      <div style={styles.container}>
-        {/* Logo */}
-        <h2 style={styles.logo}>TradePlatform</h2>
+    <nav className="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand fw-bold fs-4" to="/">
+            TradeX
+          </Link>
+        </Link>
 
-        {/* Navigation Links */}
-        <ul style={styles.navLinks}>
-          <li><Link to="/signup">Signup</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/products">Products</Link></li>
-          <li><Link to="/pricing">Pricing</Link></li>
-          <li><Link to="/support">Support</Link></li>
-        </ul>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="btn btn-primary ms-3" to="/signup">
+                Signup
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/products">
+                Products
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/pricing">
+                Pricing
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/support">
+                Support
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
 }
-
-const styles = {
-  navbar: {
-    borderBottom: "1px solid #ddd",
-    backgroundColor: "#fff",
-  },
-  container: {
-    maxWidth: "1100px",
-    margin: "0 auto",
-    padding: "1rem",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  logo: {
-    margin: 0,
-    color: "#387ed1",
-  },
-  navLinks: {
-    listStyle: "none",
-    display: "flex",
-    gap: "1.5rem",
-    margin: 0,
-  },
-};
 
 export default Navbar;
