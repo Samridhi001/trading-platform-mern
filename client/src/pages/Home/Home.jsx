@@ -1,9 +1,12 @@
-import Hero from "./Hero";
+import HomeHero from "./HomeHero";
+import Stats from "../../components/Stats";
+
 
 function Home() {
   return (
     <>
-      <Hero />
+      <HomeHero />
+      <Stats />
     </>
   );
 }
